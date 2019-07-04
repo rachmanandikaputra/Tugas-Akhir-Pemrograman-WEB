@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>TUGAS PROYEK</title>
+<link href="css.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div class="wrap">
+    <div class="header">
+            <h1>HEADER</h1>
+    </div>
+        <div class="menu">
+            <ul>
+                <li><a href="index.php?page=beranda">Beranda</a></li>
+                <li><a href="index.php?page=data">Data Diri</a></li>
+                <li><a href="index.php?page=form">Pengisian</a></li>
+                <li><form name="google" style="size: 10"> google : 
+                    <input type="text" name="key" size="10">
+                    <input type="submit" name="submit" value="google" onclick="cari()">
+                    </form></li>
+            </ul>
+    </div>
+    <div class="main">
+        <div class="content">
+            <?php
+            if(isset($_GET['page'])){
+            $page = $_GET['page'];
+
+            switch($page){
+
+            case 'beranda' :
+            include 'beranda.html';
+            break;
+
+            case 'data' :
+            include 'data.html';
+            break;
+
+            case 'form' :
+            include 'form.php';
+            break;
+            default;
+        }
+
+        }
+            ?>
+        </div>
+  
+        <div class="sidebar">
+            <h2>Righr Sidebar</h2>
+        </div>
+  
+        <div class="clear"></div>
+  
+    </div>
+  
+    <div class="footer">
+        <center><p>Copyright &copy; 2017 www.modulkomputer.com</p></center>
+    </div>
+  
+</div>
+</body>
+</html>
